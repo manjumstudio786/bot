@@ -1,0 +1,142 @@
+/* Message Scheduler Styles */
+
+.scheduler-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.message-group {
+    margin-bottom: 2rem;
+}
+
+.message-group h4 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border);
+}
+
+.scheduled-message {
+    padding: 1rem;
+    border: 1px solid var(--border);
+    margin: 0.5rem 0;
+    border-radius: 0.5rem;
+    background: var(--surface);
+    transition: all 0.3s ease;
+}
+
+.scheduled-message:hover {
+    box-shadow: var(--shadow);
+    transform: translateY(-2px);
+}
+
+.scheduled-message.overdue {
+    border-color: #ef4444;
+    background: rgba(239, 68, 68, 0.05);
+}
+
+.scheduled-message h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-primary);
+}
+
+.scheduled-message p {
+    margin: 0.5rem 0;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.message-status {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.message-status.pending {
+    background: #fbbf24;
+    color: #92400e;
+}
+
+.message-status.sent {
+    background: #10b981;
+    color: white;
+}
+
+.message-status.failed {
+    background: #ef4444;
+    color: white;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .scheduler-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Schedule Modal Enhancements */
+.schedule-modal .modal-content {
+    max-width: 500px;
+}
+
+.schedule-modal .form-group label {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.schedule-modal .form-group small {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+}
+
+/* Overdue message warning */
+.overdue-warning {
+    color: #ef4444;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    background: rgba(239, 68, 68, 0.1);
+    border-radius: 0.25rem;
+    border-left: 3px solid #ef4444;
+}
+
+/* Success/Error indicators */
+.message-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.message-indicator.pending {
+    background: #fbbf24;
+    animation: pulse 2s infinite;
+}
+
+.message-indicator.sent {
+    background: #10b981;
+}
+
+.message-indicator.failed {
+    background: #ef4444;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
